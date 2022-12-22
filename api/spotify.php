@@ -7,6 +7,7 @@ class Spotify
 	function get_token()
 	{
 		$sp_dc = getenv('SP_DC');
+		console.log($sp_dc);
 		if (!$sp_dc)
 			throw new Exception("Please set SP_DC as a environmental variable.");
 		$ch = curl_init();
