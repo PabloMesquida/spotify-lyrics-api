@@ -38,9 +38,9 @@ class Spotify
 
 	function check_if_expire()
 	{
-		$check = file_exists("tmp/config.json");
+		$check = file_exists("/tmp/config.json");
 		if ($check) {
-			$json = file_get_contents("tmp/config.json");
+			$json = file_get_contents("/tmp/config.json");
 			$timeleft = json_decode($json, true)['accessTokenExpirationTimestampMs'];
 			$timenow = round(microtime(true) * 1000);
 		}
@@ -51,7 +51,7 @@ class Spotify
 
 	function get_lyrics($track_id)
 	{
-		$json = file_get_contents('tmp/config.json');
+		$json = file_get_contents('/tmp/config.json');
 		$token = json_decode($json, true)['accessToken'];
 		$formated_url = $this->lyrics_url . $track_id . '?format=json&market=from_token';
 
