@@ -32,7 +32,7 @@ class Spotify
 		$token_json = json_decode($result, true);
 		if (! $token_json || $token_json['isAnonymous'])
 			throw new Exception("The SP_DC set seems to be invalid, please correct it!");
-		$token_file = fopen("tmp/config.json", "w") or die("Unable to open file!");;
+		$token_file = fopen("./tmp/config.json", "w") or die("Unable to open file!");;
 		fwrite($token_file, $result);
 	}
 
