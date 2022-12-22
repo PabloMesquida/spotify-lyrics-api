@@ -5,7 +5,11 @@ class Spotify
 	private $token_url = 'https://open.spotify.com/get_access_token?reason=transport&productType=web_player';
 	private $lyrics_url = 'https://spclient.wg.spotify.com/color-lyrics/v2/track/';
 	
-	function debug_to_console($data) {
+	
+	
+	function get_token()
+	{
+		function debug_to_console($data) {
    		$output = $data;
     		if (is_array($output))
         		$output = implode(',', $output);
@@ -13,11 +17,10 @@ class Spotify
     			echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
 		}
 	
-	
-	function get_token()
-	{
+		
+		
 		$sp_dc = getenv('SP_DC');
-		debug_to_console.($sp_dc);
+		debug_to_console($sp_dc);
 		if (!$sp_dc)
 			throw new Exception("Please set SP_DC as a environmental variable.");
 		$ch = curl_init();
