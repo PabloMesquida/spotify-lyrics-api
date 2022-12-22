@@ -21,8 +21,9 @@ if ($url) {
 $spotify = new Spotify();
 $spotify->check_if_expire();
 $reponse = $spotify->get_lyrics(track_id: $trackid);
-//echo make_reponse($reponse, $typed);
-echo make_reponse($reponse);
+$typed = "";
+echo make_reponse($reponse, $typed);
+
 
 function make_reponse($response, $format)
 {
